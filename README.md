@@ -72,6 +72,10 @@ until it reaches Cloudflare's edge.
 
 ## Networking notes (Railway specifics)
 
+- **Healthcheck port:** the template sets `PORT=20241` on the service — Railway probes
+  its HTTP healthcheck against that port, so don't change it unless you also change the
+  metrics port. No public domain is needed: the connector is outbound-only, and Railway
+  reaches it over the private network.
 - **Protocol:** `http2` is forced because Railway's egress is TCP-only; the default
   QUIC transport needs UDP and would fall back after a timeout on every restart.
 - **Healthcheck:** Railway performs an HTTP healthcheck against `/ready` on the
