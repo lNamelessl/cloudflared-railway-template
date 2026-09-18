@@ -1,5 +1,7 @@
 # Cloudflared on Railway — Cloudflare Tunnel connector
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/cloudflared-template)
+
 Deploy a **Cloudflare Tunnel connector** (`cloudflared`) on Railway and publish your
 internal Railway services through Cloudflare **without exposing a single inbound port**.
 
